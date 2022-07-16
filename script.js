@@ -16,3 +16,17 @@ $(function () {
     s;
   });
 });
+
+const clock = document.querySelector(".clock");
+
+const time = () => {
+  let now = new Date();
+  let h = now.getHours();
+  let m = now.getMinutes();
+  let s = now.getSeconds();
+
+  const myClock = `<span>${h}</span> : <span>${m} </span>: <span>${s}</span>`;
+
+  clock.innerHTML = myClock;
+};
+setInterval(time, 1000);
